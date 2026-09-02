@@ -23,14 +23,16 @@ for event in events:
         wanted_events.append(new_event)
 
 cal = Calendar()
+
+extra.append(ContentLine(name="X-WR-CALNAME", value="Pokemon Go Event Calendar"))
 for w_event in wanted_events:
     print(json.dumps(w_event, indent=4))
     event = Event()
-    event.name = "Gible Community Day Classic"
+    event.name = w_event['name']
     event.begin = w_event['start']
     event.description = f"Duration: {w_event['duration']}"
 
     cal.events.add(event)
 
-    with open("community-day.ics", "w") as f:
-        f.writelines(cal)
+with open("community-day.ics", "w") as f:
+    f.writelines(cal)
