@@ -2,7 +2,7 @@ name: Update Events Calendar
 
 on:
   schedule:
-    # Run every 6 hours
+    # Run every 24 hours
     - cron: "0 0 * * *"
 
   # Allow manual runs from the Actions tab
