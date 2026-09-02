@@ -7,14 +7,9 @@ response = requests.get("https://raw.githubusercontent.com/bigfoott/ScrapedDuck/
 
 events = response.json()
 
-print(type(events))
-
-#pos_events = []
 wanted_types = ['raid-day', 'event', 'raid-hour', 'raid-battles']
 wanted_events = []
 for event in events:
-    #if event['eventType'] not in pos_events:
-    #    pos_events.append(event['eventType'])
     if event['eventType'] in wanted_types:
         start_datetime = datetime.fromisoformat(event['start'])
         end_datetime = datetime.fromisoformat(event['end'])
@@ -27,11 +22,9 @@ for event in events:
         }
         wanted_events.append(new_event)
 
+cal = Calendar()
 for w_event in wanted_events:
     print(json.dumps(w_event, indent=4))
-
-    cal = Calendar()
-
     event = Event()
     event.name = "Gible Community Day Classic"
     event.begin = w_event['start']
