@@ -2,6 +2,7 @@ import requests
 import json
 from datetime import datetime
 from ics import Calendar, Event
+from ics.parse import ContentLine
 
 response = requests.get("https://raw.githubusercontent.com/bigfoott/ScrapedDuck/refs/heads/data/events.json")
 
