@@ -24,7 +24,7 @@ for event in events:
 
 cal = Calendar()
 
-extra.append(ContentLine(name="X-WR-CALNAME", value="Pokemon Go Event Calendar"))
+cal.extra.append(ContentLine(name="X-WR-CALNAME", value="Pokemon Go Event Calendar"))
 for w_event in wanted_events:
     print(json.dumps(w_event, indent=4))
     event = Event()
