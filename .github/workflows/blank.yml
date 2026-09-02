@@ -1,4 +1,4 @@
-name: Update Community Day Calendar
+name: Update Events Calendar
 
 on:
   schedule:
