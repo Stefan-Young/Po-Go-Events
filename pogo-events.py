@@ -35,5 +35,5 @@ for w_event in wanted_events:
 
     cal.events.add(event)
 
-with open("community-day.ics", "w") as f:
+with open("pokemon_go_events.ics", "w") as f:
     f.writelines(cal)
