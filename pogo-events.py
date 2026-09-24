@@ -12,8 +12,11 @@ wanted_types = ['raid-day', 'event', 'raid-hour', 'raid-battles']
 wanted_events = []
 for event in events:
     if event['eventType'] in wanted_types:
-        start_datetime = datetime.fromisoformat(event['start'])
-        end_datetime = datetime.fromisoformat(event['end'])
+        try:
+            start_datetime = datetime.fromisoformat(event['start'])
+            end_datetime = datetime.fromisoformat(event['end'])
+        except:
+            continue
         duration = str(end_datetime - start_datetime)
         new_event = {
             "name": event['name'],
